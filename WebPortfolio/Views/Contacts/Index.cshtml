@@ -1,0 +1,33 @@
+﻿@model WebPortfolio.Models.Contacts
+
+@{
+    ViewData["Title"] = "Contacts Page";
+}
+
+<div class="contacts_wrapper">
+    <h1 class="h1_contacts">Contacts Me Page</h1>
+
+    <div class="contacts_container">
+        <form class="form_container" asp-action="Submit" method="post">
+            <label asp-for="Name">Full Name</label>
+            <input asp-for="Name" class="form-control"/>
+            <label asp-for="Email">E-mail</label>
+            <input asp-for="Email" class="form-control"/>
+            <label asp-for="Message"></label>
+            <textarea asp-for="Message" class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary">Contact Me</button>
+        </form>
+        <div class="myContacts">
+            <h3 class="h3_myContacts">My E-mail:</h3>
+            <p>ton.kris72@gmail.com</p>
+            <h3 class="h3_myContacts">My Phone:</h3>
+            <p> +359 888 22 0868</p>
+            <h3 class="h3_myContacts">My Social Media:</h3>
+            <div class="social_container">
+                <img src="~/images/instagram.png">
+                <img src="~/images/facebook.png">
+                <img src="~/images/mail.png">
+            </div>
+        </div>
+    </div>
+</div>

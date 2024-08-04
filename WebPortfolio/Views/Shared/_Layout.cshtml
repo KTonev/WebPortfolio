@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebPortfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="stylesheet" href="~/css/contacts.css" />
+    <link rel="stylesheet" href="~/css/skills.css" />
+    <link rel="stylesheet" href="~/css/feedback.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <h1><nobr>KRISTIYAN TONEV.</nobr></h1>
+
+            <ul class="nav_list">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a></li>
+                <li><a asp-area="" asp-controller="Skills" asp-action="Index">SKILLS</a></li>
+                <li><a asp-area="" asp-controller="Contacts" asp-action="Index">CONTACTS</a></li>
+                <li><a asp-area="" asp-controller="Feedback" asp-action="Index">FEEDBACK</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_info1">
+                <h2 class="footer_h">Technologies Used</h2>
+                <div class="footer_text">
+                    <p>This website is built using ASP.NET, .NET, HTML5, CSS3, jQuery, and AJAX, and is connected to a SQL database for dynamic content management.</p>
+                </div>
+                <div class="footer_social">
+                    <img src="~/images/instagram.png">
+                    <img src="~/images/facebook.png">
+                    <img src="~/images/mail.png">
+                </div>
+            </div>
+            <div class="footer_info2">
+                <div class="footer_info2_1">
+                    <img src="~/images/github_icon.png">
+                    <a href="https://github.com/KTonev">KTonev</a>
+                </div>
+                <div class="footer_info2_2">
+                    <img src="~/images/gmail_icon.png">
+                    <p>ton.kris72@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="footer_last">© 2024 Kristiyan Tonev. All rights reserved.</p>
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

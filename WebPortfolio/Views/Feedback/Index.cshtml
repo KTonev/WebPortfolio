@@ -1,0 +1,37 @@
+﻿@model WebPortfolio.Models.Feedback
+
+@{
+    ViewData["Title"] = "Feedback Page";
+}
+
+<div class="feedback_wrapper">
+    <form class="feedback_form" asp-action="Submit" method="post">
+        <h2>Leave a Feedback</h2>
+
+        <div class="feedback_form_group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="feedback_form_group">
+            <label asp-for="Comment">Comment</label>
+            <textarea asp-for="Comment" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="feedback_button">Submit</button>
+    </form>
+    
+    <div class="feedback_list">
+        <h2>Recent Feedbacks</h2>
+
+        @foreach (var feedback in (IEnumerable<WebPortfolio.Models.Feedback>)ViewData["Feedback"])
+        {
+            <div class="feedback_item">
+                <p><strong>@feedback.Name</strong> (@feedback.Date.ToString("g"))</p>
+                <p>@feedback.Comment</p>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
