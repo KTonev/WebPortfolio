@@ -6,7 +6,6 @@ namespace WebPortfolio.Controllers
 {
     public class ContactsController : Controller
     {
-        // GET: Contact
         private readonly ILogger<ContactsController> _logger;
         private readonly WebPortfolioContext _context;
 

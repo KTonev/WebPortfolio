@@ -5,7 +5,7 @@
 }
 
 <div class="feedback_wrapper">
-    <form class="feedback_form" asp-action="Submit" method="post">
+    <form id="feedbackForm" class="feedback_form">
         <h2>Leave a Feedback</h2>
 
         <div class="feedback_form_group">
@@ -18,10 +18,11 @@
         </div>
         <button type="submit" class="feedback_button">Submit</button>
     </form>
+
     
     <div class="feedback_list">
         <h2>Recent Feedbacks</h2>
-
+        <div id="feedbackList">
         @foreach (var feedback in (IEnumerable<WebPortfolio.Models.Feedback>)ViewData["Feedback"])
         {
             <div class="feedback_item">
@@ -29,6 +30,7 @@
                 <p>@feedback.Comment</p>
             </div>
         }
+        </div>
     </div>
 </div>
 

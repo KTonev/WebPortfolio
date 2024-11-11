@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebPortfolio.Controllers;
 using WebPortfolio.Data;
 using WebPortfolio.Models;
+using System;
 
 public class FeedbackController : Controller
 {
@@ -22,15 +23,22 @@ public class FeedbackController : Controller
     }
 
     [HttpPost]
-    public IActionResult Submit(Feedback feedback)
+    public JsonResult Submit([FromBody] Feedback feedback)
     {
         if (ModelState.IsValid)
         {
             feedback.Date = DateTime.Now;
             _context.Feedback.Add(feedback);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+
+            return Json(new
+            {
+                name = feedback.Name,
+                date = feedback.Date,
+                comment = feedback.Comment
+            });
         }
-        return BadRequest(ModelState);
+
+        return Json(new { error = "Invalid feedback data." });
     }
 }
