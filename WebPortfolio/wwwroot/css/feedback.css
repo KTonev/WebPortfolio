@@ -16,41 +16,41 @@
     border-left: 0px;
 }
 
-.feedback_form h2 {
-    font-size: 30px;
-    color: #131f22;
-}
+    .feedback_form h2 {
+        font-size: 30px;
+        color: #131f22;
+    }
 
 .feedback_form_group {
     display: flex;
     flex-direction: column;
 }
 
-.feedback_form_group label {
-    font-size: 18px;
-}
+    .feedback_form_group label {
+        font-size: 18px;
+    }
 
-.feedback_form_group input {
-    width: 50%;
-    border: none;
-    border-bottom: 3px solid #131f22;
-    font-size: 20px;
-    background-color: transparent;
-}
+    .feedback_form_group input {
+        width: 50%;
+        border: none;
+        border-bottom: 3px solid #131f22;
+        font-size: 20px;
+        background-color: transparent;
+    }
 
-.feedback_form_group input:focus {
-    outline: none;
-    border: none;
-    border-bottom: 3px solid #131f22;
-}
+        .feedback_form_group input:focus {
+            outline: none;
+            border: none;
+            border-bottom: 3px solid #131f22;
+        }
 
-.feedback_form_group textarea {
-    width: 50%;
-    border: none;
-    border-bottom: 3px solid #131f22;
-    font-size: 16px;
-    background-color: transparent;
-}
+    .feedback_form_group textarea {
+        width: 50%;
+        border: none;
+        border-bottom: 3px solid #131f22;
+        font-size: 16px;
+        background-color: transparent;
+    }
 
 .feedback_form button {
     width: 55%;
@@ -64,12 +64,12 @@
     border-radius: 50px;
 }
 
-.feedback_form button:hover {
-    background-color: transparent;
-    color: #131f22;
-    border: 3px solid #131f22;
-    cursor: pointer;
-}
+    .feedback_form button:hover {
+        background-color: transparent;
+        color: #131f22;
+        border: 3px solid #131f22;
+        cursor: pointer;
+    }
 
 .feedback_list {
     display: flex;
@@ -79,14 +79,98 @@
     height: 60vh;
 }
 
-.feedback_list h2 {
-    font-size: 30px;
-    color: #131f22;
-    margin-bottom: 6%;
-    margin-left: 25%;
-}
+    .feedback_list h2 {
+        font-size: 30px;
+        color: #131f22;
+        margin-bottom: 6%;
+        margin-left: 25%;
+    }
 
 .feedback_item {
     margin-bottom: 3%;
     margin-left: 25%;
+}
+
+.delete_button {
+    font-family: Montserrat;
+    font-weight: 700;
+    border: none;
+    color: #131f22;
+}
+
+    .delete_button:hover {
+        cursor: pointer;
+    }
+
+@media (max-width: 768px) {
+    .feedback_wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .feedback_form {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 10%;
+        padding-top: 10%;
+        height: 40%;
+        border: 3px solid #131f22;
+        margin-bottom: 10%;
+    }
+
+        .feedback_form h2,
+        .feedback_list h2 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+    .feedback_form_group label {
+        font-size: 16px;
+    }
+
+    .feedback_form_group input,
+    .feedback_form_group textarea {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .feedback_form button {
+        width: 90%;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .feedback_list {
+        width: 95%;
+        margin: 0 auto;
+        padding-bottom: 10%;
+        padding-top: 10%;
+        height: 40%;
+        border: 3px solid #131f22;
+        margin-bottom: 10%;
+    }
+
+        .feedback_list h2 {
+            margin-left: 0;
+        }
+
+    .feedback_item {
+        margin-left: 0;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .feedback_item p {
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+    .delete_button {
+        font-size: 14px;
+        padding: 2px 4px;
+        margin-top: 3%;
+    }
 }

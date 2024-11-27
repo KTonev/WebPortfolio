@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace WebPortfolio.Models
 {
@@ -14,5 +15,9 @@ namespace WebPortfolio.Models
         public string Comment { get; set; }
 
         public DateTime Date { get; set; }
+
+        [JsonIgnore]
+        [Required]
+        public string UserId { get; set; }
     }
 }

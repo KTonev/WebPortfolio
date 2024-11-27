@@ -1,0 +1,84 @@
+﻿.register_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .register_container h2 {
+        align-self: center;
+        font-family: Montserrat;
+        font-size: 30px;
+        margin-top: 4%;
+        color: #131f22;
+    }
+
+    .register_container form {
+        height: 80%;
+        width: 25%;
+        margin-top: 4%;
+    }
+
+    .register_container label {
+        margin-top: 5%;
+        font-size: 18px;
+        font-family: Montserrat;
+    }
+
+    .register_container input {
+        margin-bottom: 10%;
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid #131f22;
+        font-size: 20px;
+        background-color: transparent;
+    }
+
+        .register_container input:focus {
+            outline: none;
+            border: none;
+            border-bottom: 3px solid #131f22;
+        }
+
+    .register_container button {
+        margin-left: 8%;
+        margin-top: 5%;
+        width: 85%;
+        height: 20%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        background-color: #131f22;
+        color: white;
+        font-size: 20px;
+        font-family: Montserrat;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+    }
+
+        .register_container button:hover {
+            background-color: transparent;
+            color: #131f22;
+            border: 3px solid #131f22;
+            cursor: pointer;
+        }
+
+@media (max-width: 1420px) {
+    .register_container form {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1165px) {
+    .register_container form {
+        width: 40%;
+    }
+}
+
+@media (max-width: 980px) {
+    .register_container form {
+        width: 50%;
+    }
+}

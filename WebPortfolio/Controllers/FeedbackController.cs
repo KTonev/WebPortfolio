@@ -3,7 +3,10 @@ using WebPortfolio.Controllers;
 using WebPortfolio.Data;
 using WebPortfolio.Models;
 using System;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
+[Authorize]
 public class FeedbackController : Controller
 {
     private readonly ILogger<FeedbackController> _logger;
@@ -25,8 +28,11 @@ public class FeedbackController : Controller
     [HttpPost]
     public JsonResult Submit([FromBody] Feedback feedback)
     {
+        ModelState.Remove(nameof(Feedback.UserId));
+
         if (ModelState.IsValid)
         {
+            feedback.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             feedback.Date = DateTime.Now;
             _context.Feedback.Add(feedback);
             _context.SaveChanges();
@@ -37,8 +43,31 @@ public class FeedbackController : Controller
                 date = feedback.Date,
                 comment = feedback.Comment
             });
+        } else
+        {
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+            return Json(new { error = "Invalid feedback data.", details = errors });
+        }
+    }
+
+    [HttpDelete]
+    public IActionResult Delete(int id)
+    {
+        var feedback = _context.Feedback.FirstOrDefault(f => f.Id == id);
+
+        if (feedback == null)
+        {
+            return Json(new { success = false, message = "Feedback not found." });
         }
 
-        return Json(new { error = "Invalid feedback data." });
+        if (feedback.UserId != User.FindFirstValue(ClaimTypes.NameIdentifier))
+        {
+            return Json(new { success = false, message = "You are not authorized to delete this feedback." });
+        }
+
+        _context.Feedback.Remove(feedback);
+        _context.SaveChanges();
+
+        return Json(new { success = true, message = "Feedback deleted successfully." });
     }
 }

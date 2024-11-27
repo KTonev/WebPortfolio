@@ -12,17 +12,37 @@
     <link rel="stylesheet" href="~/css/contacts.css" />
     <link rel="stylesheet" href="~/css/skills.css" />
     <link rel="stylesheet" href="~/css/feedback.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/register.css" />
+    <script src="~/js/site.js"></script>
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
+            <button class="navbar_toggle" id="navbarToggle">
+                &#9776;
+            </button>
+
             <h1><nobr>KRISTIYAN TONEV.</nobr></h1>
 
-            <ul class="nav_list">
+            <ul class="nav_list" id="navList">
                 <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a></li>
                 <li><a asp-area="" asp-controller="Skills" asp-action="Index">SKILLS</a></li>
                 <li><a asp-area="" asp-controller="Contacts" asp-action="Index">CONTACTS</a></li>
                 <li><a asp-area="" asp-controller="Feedback" asp-action="Index">FEEDBACK</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>
+                        <form asp-area="" asp-controller="Login" asp-action="Logout" method="post" style="display:inline;">
+                            <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer;">LOGOUT</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li><a asp-area="" asp-controller="Register" asp-action="Index">REGISTER</a></li>
+                    <li><a asp-area="" asp-controller="Login" asp-action="Index">LOGIN</a></li>
+                }
             </ul>
         </nav>
     </header>

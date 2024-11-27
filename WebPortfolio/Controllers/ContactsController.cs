@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebPortfolio.Data;
 using WebPortfolio.Models;
 
 namespace WebPortfolio.Controllers
 {
+    [Authorize]
     public class ContactsController : Controller
     {
         private readonly ILogger<ContactsController> _logger;

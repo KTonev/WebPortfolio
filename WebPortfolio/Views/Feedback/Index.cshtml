@@ -1,4 +1,5 @@
-﻿@model WebPortfolio.Models.Feedback
+﻿@using System.Security.Claims
+@model WebPortfolio.Models.Feedback
 
 @{
     ViewData["Title"] = "Feedback Page";
@@ -23,17 +24,23 @@
     <div class="feedback_list">
         <h2>Recent Feedbacks</h2>
         <div id="feedbackList">
-        @foreach (var feedback in (IEnumerable<WebPortfolio.Models.Feedback>)ViewData["Feedback"])
-        {
-            <div class="feedback_item">
-                <p><strong>@feedback.Name</strong> (@feedback.Date.ToString("g"))</p>
-                <p>@feedback.Comment</p>
-            </div>
-        }
+            @foreach (var feedback in (IEnumerable<WebPortfolio.Models.Feedback>)ViewData["Feedback"])
+            {
+                <div class="feedback_item">
+                    <p><strong>@feedback.Name</strong> (@feedback.Date.ToString("g"))</p>
+                    <p>@feedback.Comment</p>
+
+                    @if (feedback.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier) || User.IsInRole("Admin"))
+                    {
+                        <button class="delete_button" data-id="@feedback.Id">Delete</button>
+                    }
+                </div>
+            }
         </div>
     </div>
+
 </div>
 
 @section Scripts {
-    <script src="~/js/site.js"></script>
+    <script src="~/js/feedback.js"></script>
 }

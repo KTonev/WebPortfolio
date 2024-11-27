@@ -7,19 +7,19 @@
     color: #131f22;
 }
 
-.skills_container h1 {
-    font-size: 40px;
-    margin-top: 4%;
-    color: #131f22;
-}
+    .skills_container h1 {
+        font-size: 40px;
+        margin-top: 4%;
+        color: #131f22;
+    }
 
-.skills_container h3 {
-    font-family: Montserrat;
-    font-size: 23px;
-    margin-top: 1%;
-    color: #131f22;
-    margin-bottom: 10%;
-}
+    .skills_container h3 {
+        font-family: Montserrat;
+        font-size: 23px;
+        margin-top: 1%;
+        color: #131f22;
+        margin-bottom: 10%;
+    }
 
 .skills_content {
     display: flex;
@@ -35,8 +35,8 @@
     width: 100%;
 }
 
-.skills_icons img{
-    width: 80px;
-    height: 80px;
-    margin: 4%
-}
+    .skills_icons img {
+        width: 80px;
+        height: 80px;
+        margin: 4%
+    }

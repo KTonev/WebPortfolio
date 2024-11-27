@@ -33,59 +33,59 @@
     height: 100%;
 }
 
-.form_container label {
-    margin-top: 5%;
-    margin-left: 8%;
-    font-size: 18px;
-    font-family: Montserrat;
-}
+    .form_container label {
+        margin-top: 5%;
+        margin-left: 8%;
+        font-size: 18px;
+        font-family: Montserrat;
+    }
 
-.form_container input {
-    margin-bottom: 10%;
-    margin-left: 8%;
-    width: 85%;
-    border: none;
-    border-bottom: 3px solid #131f22;
-    font-size: 20px;
-    background-color: transparent;
-}
+    .form_container input {
+        margin-bottom: 10%;
+        margin-left: 8%;
+        width: 85%;
+        border: none;
+        border-bottom: 3px solid #131f22;
+        font-size: 20px;
+        background-color: transparent;
+    }
 
-.form_container input:focus {
-    outline: none;
-    border: none;
-    border-bottom: 3px solid #131f22;
-}
+        .form_container input:focus {
+            outline: none;
+            border: none;
+            border-bottom: 3px solid #131f22;
+        }
 
-.form_container textarea {
-    margin-bottom: 10%;
-    margin-left: 8%;
-    width: 85%;
-    height: 5%;
-    border: none;
-    border-bottom: 3px solid black;
-    font-size: 16px;
-    background-color: transparent;
-}
+    .form_container textarea {
+        margin-bottom: 10%;
+        margin-left: 8%;
+        width: 85%;
+        height: 5%;
+        border: none;
+        border-bottom: 3px solid black;
+        font-size: 16px;
+        background-color: transparent;
+    }
 
-.form_container button {
-    margin-left: 8%;
-    width: 85%;
-    height: 10%;
-    background-color: #131f22;
-    color: white;
-    font-size: 20px;
-    font-family: Montserrat;
-    font-weight: 700;
-    border: none;
-    border-radius: 50px;
-}
+    .form_container button {
+        margin-left: 8%;
+        width: 85%;
+        height: 10%;
+        background-color: #131f22;
+        color: white;
+        font-size: 20px;
+        font-family: Montserrat;
+        font-weight: 700;
+        border: none;
+        border-radius: 50px;
+    }
 
-.form_container button:hover {
-    background-color: transparent;
-    color: #131f22;
-    border: 3px solid #131f22;
-    cursor: pointer;
-}
+        .form_container button:hover {
+            background-color: transparent;
+            color: #131f22;
+            border: 3px solid #131f22;
+            cursor: pointer;
+        }
 
 .myContacts {
     display: flex;
@@ -117,8 +117,80 @@
     margin-top: 5%;
 }
 
-.social_container img {
-    width: 33px;
-    height: 33px;
-    margin-right: 5%;
+    .social_container img {
+        width: 33px;
+        height: 33px;
+        margin-right: 5%;
+    }
+
+@media (max-width: 768px) {
+    .contacts_container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        align-self: center;
+        border: 3px solid #131f22;
+        margin-top: 15%;
+    }
+
+    .form_container {
+        width: 100%;
+        padding: 10px;
+    }
+
+        .form_container label {
+            margin-left: 10%;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .form_container input,
+        .form_container textarea {
+            width: 80%;
+            margin-left: 10%;
+            font-size: 16px;
+        }
+
+        .form_container button {
+            width: 80%;
+            margin-left: 10%;
+            height: 10%;
+        }
+
+    .myContacts {
+        width: 100%;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .h3_myContacts {
+        font-size: 16px;
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .myContacts p {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .social_container {
+        width: 85%;
+        margin-left: 0;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+        .social_container img {
+            width: 30px;
+            height: 30px;
+        }
+
+    .h1_contacts {
+        font-size: 28px;
+        text-align: center;
+        margin-top: 2%;
+    }
 }

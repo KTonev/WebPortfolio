@@ -21,11 +21,11 @@
     width: 100%;
 }
 
-.home_container1_img img {
-    height: 80%;
-    min-width: 55%;
-    object-fit: cover;
-}
+    .home_container1_img img {
+        height: 80%;
+        min-width: 55%;
+        object-fit: cover;
+    }
 
 .home_container2 {
     width: 50%;
@@ -43,10 +43,10 @@
     color: #131f22;
 }
 
-.home_desc a {
-    text-decoration: underline;
-    color: #131f22;
-}
+    .home_desc a {
+        text-decoration: underline;
+        color: #131f22;
+    }
 
 .aboutMe {
     display: flex;
@@ -92,4 +92,66 @@
 .x_img {
     width: 120px;
     height: 120px;
+}
+
+@media (max-width: 768px) {
+    .home_wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .home_container1,
+    .home_container2 {
+        width: 100%;
+    }
+
+    .home_container1_img {
+        justify-content: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+        .home_container1_img img {
+            height: auto;
+            width: 80%;
+        }
+
+    .home_desc {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+        .home_desc h1 {
+            font-size: 24px;
+        }
+
+        .home_desc p {
+            font-size: 16px;
+        }
+
+        .home_desc a {
+            font-size: 16px;
+        }
+
+    .about_info {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .about_info_text {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .x_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .about_watermark {
+        max-width: 100%;
+        font-size: 35px;
+        margin: 20px 0;
+    }
 }
